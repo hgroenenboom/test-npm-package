@@ -6,5 +6,8 @@ pool:
   demands: Platform -equals Windows
 
 steps:
-- script: npm publish
-  displayName: 'Run a one-line script'
+- task: Npm@1
+  inputs:
+    command: publish
+    publishRegistry: useExternalRegistry
+    publishEndpoint: 'NpmGithubRegistryConnection'
