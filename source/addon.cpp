@@ -12,14 +12,15 @@ Napi::Value length( const Napi::CallbackInfo& info )
         return env.Null();
     }
 
-    if ( !info[0].IsArray() )
+    if ( !info[0].IsString() )
     {
         Napi::TypeError::New( env, "Wrong arguments" ).ThrowAsJavaScriptException();
         return env.Null();
     }
 
-    const auto size = info[0].As<Napi::Array>().Length();
-    
+    const std::string string = info[0].As<Napi::String>();
+    const auto size = string.size();
+
     if( threadsafeFunction )
     {
         auto callback = [size]( Napi::Env env, Napi::Function jsCallback, void* ) 
