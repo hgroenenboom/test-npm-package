@@ -1,0 +1,21 @@
+{
+  "name": "@hgroenenboom/npmpackage",
+  "appName": "npmpackage",
+  "productName": "npmpackage",
+  "description": "test npmpackage",
+  "author": "Harold Groenenboom",
+  "license": "UNLICENSED",
+  "version": "0.0.0",
+  "dependencies": {
+    "node-addon-api": "^4.2.0",
+    "node-gyp": "^8.0.0"
+  },
+  "repository": "https://github.com/hgroenenboom/test-npm-package",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "files": [
+    "source",
+    "binding.gyp"
+  ]
+}
